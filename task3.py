@@ -13,15 +13,15 @@ for i in range(n):
 
 squareAllRectangles: int = 0
 for i in rectangles:
-    squareAllRectangles += abs((i[2] - i[0])*(i[3] - i[1]))
+    squareAllRectangles += abs((i[2] - i[0]) * (i[3] - i[1]))
 
 paintedSquare: int = 0
-for i in range(len(rectangles)-1):
+for i in range(len(rectangles) - 1):
     # looking for intersection on X
-    minX = min(rectangles[i][0], rectangles[i][2], rectangles[i+1][0], rectangles[i+1][2])
-    maxX = max(rectangles[i][0], rectangles[i][2], rectangles[i+1][0], rectangles[i+1][2])
+    minX = min(rectangles[i][0], rectangles[i][2], rectangles[i + 1][0], rectangles[i + 1][2])
+    maxX = max(rectangles[i][0], rectangles[i][2], rectangles[i + 1][0], rectangles[i + 1][2])
     intersectionX = (rectangles[i][2] - rectangles[i][0]) + \
-                    (rectangles[i+1][2] - rectangles[i+1][0]) - \
+                    (rectangles[i + 1][2] - rectangles[i + 1][0]) - \
                     (maxX - minX)
     intersectionX = 0 if intersectionX < 0 else intersectionX
 
@@ -35,5 +35,5 @@ for i in range(len(rectangles)-1):
 
     paintedSquare += intersectionX * intersectionY
 
-S = w*h - squareAllRectangles + paintedSquare
+S = w * h - squareAllRectangles + paintedSquare
 print(S)
