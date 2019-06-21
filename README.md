@@ -45,26 +45,25 @@ When you are running without argument, application use default value (see above)
 
 `/tmp/watcher.log:`
 
-`{  
-    "SNAPSHOT": 1,  
-    "TIMESTAMP": "2019.06.21 20:45:08",  
-    "CPU_PERCENT": 7.8,  
-    "DISK_USED": 187399,  
-    "DISK_TOTAL": 669422,  
-    "VM_USED": 4584,  
-    "VM_TOTAL": 15776,  
-    "IO_READ": 322994,  
-    "IO_WRITE": 2132248,  
-    "NTWK_SENT": 192,  
-    "NTWK_RECV": 2535  
+`{<br/>  
+    "SNAPSHOT": 1,<br/>
+    "TIMESTAMP": "2019.06.21 20:45:08",<br/>
+    "CPU_PERCENT": 7.8,<br/>
+    "DISK_USED": 187399,<br/>
+    "DISK_TOTAL": 669422,<br/>
+    "VM_USED": 4584,<br/>
+    "VM_TOTAL": 15776,<br/>
+    "IO_READ": 322994,<br/>
+    "IO_WRITE": 2132248,<br/>
+    "NTWK_SENT": 192,<br/>
+    "NTWK_RECV": 2535<br/>
 }`
 
 2. `../site-packages]$ python watcher -i 3 -f txt -t 10`
 
 `/tmp/watcher.log:`
 
-`SNAPSHOT 1: 2019.06.21 20:46:38: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133184; Sent/Received: 192/2535 Mb.  
-SNAPSHOT 2: 2019.06.21 20:46:41: CPU - 7.5 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133186; Sent/Received: 192/2535 Mb.  
-SNAPSHOT 3: 2019.06.21 20:46:44: CPU - 7.7 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4588/15776 Mb; Read/Write count - 322994/2133196; Sent/Received: 192/2535 Mb.  
-SNAPSHOT 4: 2019.06.21 20:46:47: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133222; Sent/Received: 192/2535 Mb.
-`
+`SNAPSHOT 1: 2019.06.21 20:46:38: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133184; Sent/Received: 192/2535 Mb.<br/>
+SNAPSHOT 2: 2019.06.21 20:46:41: CPU - 7.5 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133186; Sent/Received: 192/2535 Mb.<br/>
+SNAPSHOT 3: 2019.06.21 20:46:44: CPU - 7.7 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4588/15776 Mb; Read/Write count - 322994/2133196; Sent/Received: 192/2535 Mb.<br/>
+SNAPSHOT 4: 2019.06.21 20:46:47: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133222; Sent/Received: 192/2535 Mb.`
