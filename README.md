@@ -20,6 +20,8 @@ To verify installation, enter in python interactive console (from any location e
 
 #### Running
 
+`../site-packages]$ python watcher`
+
 To run application, from `.../site-packages` location in console enter `python watcher`. The application will run with default setting (see below). To run app with other setting you can use additional arguments or you can change watcher_config file.
 
 
