@@ -7,6 +7,17 @@ This Python app gets common system information every given time interval and wri
 Default setting can be changed in "watcher/watcher_config.py" file.
 
 
+#### Gathered information
+
+The application will gather the follow information:  
+  - CPU usage (percent);  
+  - physical disk used and total Mbytes;  
+  - virtual memory used and total Mbytes;  
+  - input/ouput disk operations;  
+  - network sent/received Mbytes.  
+The information will be written to log file with current snapshot number and current timestamp. 
+
+
 #### Installation
 
 Wheel-package is in `devops_lab/` directory.  
@@ -21,7 +32,8 @@ To verify installation, enter in python interactive console (from any location e
 
 `../site-packages]$ python watcher`
 
-To run application, from `.../site-packages` location in console enter `python watcher`. The application will run with default setting (see below). To run app with other setting you can use additional arguments or you can change watcher_config file.
+To run application, from `.../site-packages` location in console enter `python watcher`.  
+The application will run with default setting and will be getting common system information and writing it to log
 
 
 #### Settings
@@ -32,7 +44,7 @@ You can use optional parameters to run this application. There are the follow pa
   
   `-i [I]`      Set update interval (in seconds). Default = 5 seconds;
 
-  `-f [F]`      Set output format txt|json. Default - "txt";
+  `-f [F]`      Set output format txt / json. Default - "txt";
 
   `-t [T]`      Set program work time. Default = 30 seconds.
 
