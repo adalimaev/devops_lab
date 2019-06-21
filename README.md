@@ -15,6 +15,7 @@ The application will gather the follow information:
   - virtual memory used and total Mbytes;  
   - input/ouput disk operations;  
   - network sent/received Mbytes.  
+
 The information will be written to log file with current snapshot number and current timestamp. 
 
 
