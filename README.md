@@ -4,7 +4,7 @@
 #### Description
 
 This Python app gets common system information every given time interval and writes to the log file.  
-Default setting can be changed in "watcher_config" file.
+Default setting can be changed in "watcher/watcher_config.py" file.
 
 
 #### Installation
@@ -14,7 +14,7 @@ To install use
 
 `pip install devops_lab/watcher-0.1-py3-none-any.whl`
 
-To verify installation, enter in python interactive console (from any location except `devops_lab` directory) and enter `import watcher`. Then enter `watcher.__path__` and check that package is in `.../site-packages` directory.
+To verify installation, enter in python interactive console (from any location except `devops_lab` directory) and type `import watcher`. Then enter `watcher.__path__` and check that package is in `.../site-packages` directory.
 
 
 #### Running
