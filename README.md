@@ -45,10 +45,10 @@ When you are running without argument, application use default value (see above)
 
 `/tmp/watcher.log:`
 
-`{<br/>  
-    "SNAPSHOT": 1,<br/>
-    "TIMESTAMP": "2019.06.21 20:45:08",<br/>
-    "CPU_PERCENT": 7.8,<br/>
+`{\
+    "SNAPSHOT": 1,\
+    "TIMESTAMP": "2019.06.21 20:45:08",\
+    "CPU_PERCENT": 7.8,\
     "DISK_USED": 187399,<br/>
     "DISK_TOTAL": 669422,<br/>
     "VM_USED": 4584,<br/>
