@@ -4,15 +4,15 @@
 #### Description
 
 This Python app gets common system information every given time interval and writes to the log file. 
-Default setting:
 
-Default setting can be changed in "watcher_config
+Default setting can be changed in "watcher_config" file.
 
 
 #### Installation
 
 Wheel-package is in `dist/` directory. 
 To install use
+
 `pip install devops_lab/dist/watcher-0.1-py3-none-any.whl`
 
 To verify installation, enter in python interactive console (from any location except `devops_lab` directory) and enter `import watcher`. Then enter `watcher.__path__` and check that package is in `.../site-packages` directory.
@@ -26,17 +26,21 @@ To run application, from `.../site-packages` location in console enter `python w
 #### Settings
 
 You can use optional parameters to run this application. There are the follow parameters:
-  `-h, --help`  show help message and exit
-  `-i [I]`      Set update interval (in seconds). Default = 5 seconds
-  `-f [F]`      Set output format txt|json. Default - "txt"
-  `-t [T]`      Set program work time. Default = 30 seconds
+
+  `-h, --help`  show help message and exit;
+  
+  `-i [I]`      Set update interval (in seconds). Default = 5 seconds;
+
+  `-f [F]`      Set output format txt|json. Default - "txt";
+
+  `-t [T]`      Set program work time. Default = 30 seconds.
 
 When you are running without argument, application use default value (see above) of missed parameter.
 
 
 #### Output examples
 
-1. `site-packages]$ python watcher -i 2 -f json -t 6`
+1. `../site-packages]$ python watcher -i 2 -f json -t 6`
 
 `{
     "SNAPSHOT": 1,
@@ -52,7 +56,7 @@ When you are running without argument, application use default value (see above)
     "NTWK_RECV": 2535
 }{`
 
-2. `site-packages]$ python watcher -i 3 -f txt -t 10`
+2. `../site-packages]$ python watcher -i 3 -f txt -t 10`
 
 `SNAPSHOT 1: 2019.06.21 20:46:38: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133184; Sent/Received: 192/2535 Mb.
 SNAPSHOT 2: 2019.06.21 20:46:41: CPU - 7.5 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133186; Sent/Received: 192/2535 Mb.
