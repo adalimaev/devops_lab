@@ -63,7 +63,7 @@ When you are running without argument, application use default value (see above)
 
 `/tmp/watcher.log:`
 
-`SNAPSHOT 1: 2019.06.21 20:46:38: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133184; Sent/Received: 192/2535 Mb.
-SNAPSHOT 2: 2019.06.21 20:46:41: CPU - 7.5 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133186; Sent/Received: 192/2535 Mb.
-SNAPSHOT 3: 2019.06.21 20:46:44: CPU - 7.7 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4588/15776 Mb; Read/Write count - 322994/2133196; Sent/Received: 192/2535 Mb.
-SNAPSHOT 4: 2019.06.21 20:46:47: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133222; Sent/Received: 192/2535 Mb.`
+`SNAPSHOT 1: 2019.06.21 20:46:38: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133184; Sent/Received: 192/2535 Mb.`  
+`SNAPSHOT 2: 2019.06.21 20:46:41: CPU - 7.5 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133186; Sent/Received: 192/2535 Mb.`  
+`SNAPSHOT 3: 2019.06.21 20:46:44: CPU - 7.7 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4588/15776 Mb; Read/Write count - 322994/2133196; Sent/Received: 192/2535 Mb.`  
+`SNAPSHOT 4: 2019.06.21 20:46:47: CPU - 7.8 %; Used/Total disk memory - 187399/669422 Mb; Used/Total virtual memory - 4589/15776 Mb; Read/Write count - 322994/2133222; Sent/Received: 192/2535 Mb.`  
