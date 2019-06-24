@@ -1,66 +1,81 @@
 #!/usr/bin/env python
 
-import requests
-# import getpass
-# import argparse
-# import prstats_config as pc
-
-# # parsing arguments
-# arguments = argparse.ArgumentParser(description='Get Pull Request statistic from GitHub')
-# arguments.add_argument('-i', nargs='?', help='Set update interval (in seconds).')
-# args = arguments.parse_args()
-
-# # parsing config file
-# logFile = pc.config['logFile']
-# interval = int(args.i if args.i else pc.config['interval'])
-
-# # clear log file
-# f = open(logFile, "w")
-# f.write("")
-# f.close()
-
 import pullrequest
+import argparse
+from datetime import datetime
+import calendar
 
-user = 'alenaPy'
-repo = 'devops_lab'
-token = 'f63642c4677fd4ebf2f3b586133f623a614ce90b'
+parser = argparse.ArgumentParser()
+parser.add_argument("user", help="set current user")
+parser.add_argument("repo", help="set repository name")
+parser.add_argument("-s", "--state", help="state of PR", action="store_true")
+parser.add_argument("-r", "--rate", help="show basic statistic open/closed/merged/all rate",
+                    action="store_true")
+parser.add_argument("-p", "--pretty", help="pretty format of dates (Names of days, weeks), "
+                                           "require -d option", action="store_true")
+parser.add_argument("-d", "--dates", help="show creation/closing dates", action="store_true")
+parser.add_argument("-c", "--creator", help="show who open PR", action="store_true")
+parser.add_argument("-a", "--after", help="show PRs which opened after date DD.MM.YYYY(including)")
+args = parser.parse_args()
 
-def getprlists(user, repo):
-    pr = []
-    # using for loop because of paging of github-output
-    for i in range(1, 100):
-        url = 'https://api.github.com/repos/{user}/{repo}/pulls/{PRNUMBER}/comments?page={i}&per_page=100&state=all'.\
-            format(user=user, repo=repo, i=i, PRNUMBER=37)
-        headers = {'Authorization': 'token %s' % token}
-        currentPage = (requests.get(url, headers=headers)).json()
-        if len(currentPage) == 0:
-            return pr
-        pr.extend(currentPage)
-
-
-for i in pullrequest.getAllPR(user, repo):
-    print(i)
-
+user = args.user
+repo = args.repo
 
 
-#
-# pulls_list = getprlists(user, repo)
-#
-# f = open('answer.json', 'w')
-# for i in pulls_list:
-#
-#     print(i)
-#     for k, v in i.items():
-#         # print("%s : %s" % (k, v))
-#         f.write("%s : %s" % (k, v))
-#         f.write('\n')
-#
-# # print(pulls_list)
-# f.close()
-#
-#
-# # comments list
-# # https://api.github.com/repos/{user}/{repo}/pulls/{PRNUMBER}/comments?page=1&per_page=100&state=all
+def isPullRequestAfterArgsDate(iter_date):
+    if args.after:
+        return datetime.strptime(args.after, '%d.%m.%Y') < iter_date
+    else:
+        return True
 
 
+def getPrettyDate(dt, s):
+    line = ""
+    day = calendar.day_name[calendar.weekday(dt.year, dt.month, dt.day)]
+    line += "%s on %s " % (s, str(day))
+    line += "%sth %s %s; " % (str(dt.day), str(calendar.month_name[dt.month]), str(dt.year))
+    return line
 
+
+PR = pullrequest.getAllPullRequests(user, repo)
+
+
+print("{user}'s \"{repo}\" repository statistics:".format(user=user, repo=repo))
+
+if not args.state and not args.dates and not args.creator and not args.after:
+    print("There are %d pull requests. "
+          "Please, run script with options to show information." % len(PR))
+else:
+    for iter in PR:
+        if isPullRequestAfterArgsDate(iter.created):
+            line = ""
+            line += "PR# {: >{w}}; "\
+                .format(iter.prnumber, w=len(str(pullrequest.PullRequest.amountPR)))
+
+            #  -s (--state) option
+            if args.state:
+                line += "state - {: <6}; ".format(iter.state)
+
+            #  -d (--dates) prefix
+            if args.dates:
+                line += "PR "
+                #  -p (--pretty) option
+                if args.pretty:
+                    line += getPrettyDate(iter.created, "created")
+                    if iter.closed != 'not':
+                        line += getPrettyDate(iter.closed, "closed")
+                else:
+                    line += "created - {}; closed - {}; merged - {}; "\
+                        .format(iter.created, iter.closed, iter.merged)
+
+            #  -c (--creator) option
+            if args.creator:
+                line += "creator - %s; " % iter.creator
+
+            print(line[:-2])
+
+#  -r (--rate) option
+if args.rate:
+    print("Amount of open/closed/merged/all PRs: {}/{}/{}/{}".
+          format(pullrequest.PullRequest.amountOpenPR, pullrequest.PullRequest.amountClosedPR,
+                 pullrequest.PullRequest.amountMergedPR, pullrequest.PullRequest.amountPR))
