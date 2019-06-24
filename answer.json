@@ -1,0 +1,44 @@
+url : https://api.github.com/repos/alenaPy/devops_lab/pulls/comments/296494294
+pull_request_review_id : 253145519
+id : 296494294
+node_id : MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5NjQ5NDI5NA==
+diff_hunk : @@ -0,0 +1,37 @@
++import re
++mystring = input("input a string :")
++# check for letters and avalibility " = "
++if '=' in mystring and ((re.search("[a-zA-Z]+", mystring)) is None):
++    part1, part3 = mystring.split('=')
++else:
++    print('error')
++
++if '+' in mystring:
++    operator = '+'
++elif '-' in mystring:
++    operator = '-'
++elif '*' in mystring:
++    operator = '*'
++elif '/' in mystring:
++    operator = '/'
++else:
++    print('error')
++
++part1, part2 = part1.split(operator)
++
++if part1.isdigit() and part2.isdigit() and part3.isdigit():
++    a = int(part1)
++    b = int(part2)
++    c = int(part3)
++    if (operator == '+') and (a + b == c):
+path : task6.py
+position : 26
+original_position : 26
+commit_id : a1473ebf6c55373fcee0d5700982b6e2ec02b4e9
+original_commit_id : a1473ebf6c55373fcee0d5700982b6e2ec02b4e9
+user : {'login': 'alenaPy', 'id': 17473831, 'node_id': 'MDQ6VXNlcjE3NDczODMx', 'avatar_url': 'https://avatars1.githubusercontent.com/u/17473831?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/alenaPy', 'html_url': 'https://github.com/alenaPy', 'followers_url': 'https://api.github.com/users/alenaPy/followers', 'following_url': 'https://api.github.com/users/alenaPy/following{/other_user}', 'gists_url': 'https://api.github.com/users/alenaPy/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/alenaPy/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/alenaPy/subscriptions', 'organizations_url': 'https://api.github.com/users/alenaPy/orgs', 'repos_url': 'https://api.github.com/users/alenaPy/repos', 'events_url': 'https://api.github.com/users/alenaPy/events{/privacy}', 'received_events_url': 'https://api.github.com/users/alenaPy/received_events', 'type': 'User', 'site_admin': False}
+body : parentheses in conditions below aren't needed
+created_at : 2019-06-23T19:02:53Z
+updated_at : 2019-06-23T19:02:53Z
+html_url : https://github.com/alenaPy/devops_lab/pull/37#discussion_r296494294
+pull_request_url : https://api.github.com/repos/alenaPy/devops_lab/pulls/37
+author_association : OWNER
+_links : {'self': {'href': 'https://api.github.com/repos/alenaPy/devops_lab/pulls/comments/296494294'}, 'html': {'href': 'https://github.com/alenaPy/devops_lab/pull/37#discussion_r296494294'}, 'pull_request': {'href': 'https://api.github.com/repos/alenaPy/devops_lab/pulls/37'}}

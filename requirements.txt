@@ -3,3 +3,5 @@ pycodestyle==2.5.0
 psutil
 configparser
 argparse
+requests
+getpass
