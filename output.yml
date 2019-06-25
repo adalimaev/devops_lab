@@ -1,0 +1,32 @@
+Current:
+  ENV_NAME: 3.7.0
+  EXEC_LOCATION: /home/alex/.pyenv/versions/3.7.0
+  INSTALLED_PCKGS:
+    DateTime: '4.3'
+    PyYAML: 5.1.1
+    certifi: 2019.6.16
+    chardet: 3.0.4
+    configparser: 3.7.4
+    entrypoints: '0.3'
+    flake8: 3.7.7
+    idna: '2.8'
+    mccabe: 0.6.1
+    psutil: 5.6.3
+    pycodestyle: 2.5.0
+    pyflakes: 2.1.1
+    pytz: '2019.1'
+    requests: 2.22.0
+    systemSnapshot: '0.1'
+    urllib3: 1.25.3
+    virtualenv: 16.6.1
+    zope.interface: 4.6.0
+  PIP_LOCATION: /home/alex/.pyenv/versions/3.7.0/lib/python3.7/site-packages/pip
+  PYTHONPATH:
+  - /home/alex/devops_lab
+  - /home/alex/.pyenv/versions/3.7.0/lib/python37.zip
+  - /home/alex/.pyenv/versions/3.7.0/lib/python3.7
+  - /home/alex/.pyenv/versions/3.7.0/lib/python3.7/lib-dynload
+  - /home/alex/.pyenv/versions/3.7.0/lib/python3.7/site-packages
+  SITE_PKGS_LOCATION:
+  - /home/alex/.pyenv/versions/3.7.0/lib/python3.7/site-packages
+  VERSION: 3.7.0
