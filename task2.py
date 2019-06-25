@@ -9,8 +9,9 @@ class Rectangle:
         self.Y = {1: y1, 2: y2}
 
     def __eq__(self, other):
-        return self.X[1] == other.X[1] and self.X[2] == other.X[2] and \
-               self.Y[1] == other.Y[1] and self.Y[2] == other.Y[2]
+        return self.X[1] == other.X[1] and self.X[2] == other.X[2] \
+            and self.Y[1] == other.Y[1] and self.Y[2] == other.Y[2]
+
 
 def parseParameters(str1, str2):
     w, h = str1.split()
@@ -42,7 +43,7 @@ def painting(rectangles, canvas):
         for iterX in range(min(rectangles[i].X[1], rectangles[i].X[2]),
                            max(rectangles[i].X[1], rectangles[i].X[2])):
             for iterY in range(min(rectangles[i].Y[1], rectangles[i].Y[2]),
-                           max(rectangles[i].Y[1], rectangles[i].Y[2])):
+                               max(rectangles[i].Y[1], rectangles[i].Y[2])):
                 canvas[iterX][iterY] += 1
     return canvas
 

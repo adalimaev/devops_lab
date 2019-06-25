@@ -9,7 +9,6 @@ class TestTask2(TestCase):
         self.assertEqual(rect.X, {1: 10, 2: 30})
         self.assertEqual(rect.Y, {1: 20, 2: 40})
 
-
     def test_rectangle_eq_operator(self):
         rect1 = task2.Rectangle(10, 20, 30, 40)
         rect2 = task2.Rectangle(10, 20, 30, 40)
@@ -50,10 +49,10 @@ class TestTask2(TestCase):
 
     def test_calculateWhiteArea(self):
         empt_cnv = [[0, 0, 0, 0, 0],
-                   [0, 0, 0, 0, 0],
-                   [0, 0, 0, 0, 0],
-                   [0, 0, 0, 0, 0],
-                   [0, 0, 0, 0, 0]]
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0]]
         canvas2 = [[0, 0, 0, 0, 0],
                    [0, 1, 1, 0, 0],
                    [0, 1, 2, 1, 0],
