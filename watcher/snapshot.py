@@ -14,7 +14,7 @@ class Snapshot:
         Snapshot.snapshotCount += 1
         self.SNAPSHOT = Snapshot.snapshotCount
         self.TIMESTAMP = time.strftime("%Y.%m.%d %H:%M:%S")
-        self.CPU_PERCENT = psutil.cpu_percent(interval=1, percpu=False)
+        self.CPU_PERCENT = psutil.cpu_percent()
         self.DISK_USED = psutil.disk_usage('/').used // mb
         self.DISK_TOTAL = psutil.disk_usage('/').total // mb
         self.VM_USED = psutil.virtual_memory().used // mb

@@ -31,9 +31,9 @@ To verify installation, enter in python interactive console (from any location e
 
 #### Running
 
-`../site-packages]$ python watcher`
+`$ python -m watcher`
 
-To run application, from `.../site-packages` location in console enter `python watcher`.  
+To run application enter `python -m watcher`.  
 The application will run with default setting and will be getting common system information and writing it to log
 
 
@@ -54,7 +54,7 @@ When you are running without argument, application use default value (see above)
 
 #### Output examples
 
-1. `../site-packages]$ python watcher -i 2 -f json -t 6`
+1. `$ python -m watcher -i 2 -f json -t 6`
 
 `/tmp/watcher.log:`
 
@@ -72,7 +72,7 @@ When you are running without argument, application use default value (see above)
     "NTWK_RECV": 2535
 }`
 
-2. `../site-packages]$ python watcher -i 3 -f txt -t 10`
+2. `$ python -m watcher -i 3 -f txt -t 10`
 
 `/tmp/watcher.log:`
 

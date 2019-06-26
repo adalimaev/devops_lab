@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 # import configparser
-import snapshot as sh
+from watcher import snapshot
 import time
 import argparse
-import watcher_config as wc
+from watcher import watcher_config
 
 # parsing arguments
 arguments = argparse.ArgumentParser(description='Gets common system information every given time '
@@ -18,29 +18,24 @@ arguments.add_argument('-t', nargs='?', help='Set program work time. Default = 3
 args = arguments.parse_args()
 
 # parsing config file
-logFile = wc.config['logFile']
-outputType = args.f if args.f else wc.config['outputType']
-interval = int(args.i if args.i else wc.config['interval'])
-workTime = int(args.t if args.t else wc.config['workTime'])
+logFile = watcher_config.config['logFile']
+outputType = args.f if args.f else watcher_config.config['outputType']
+interval = int(args.i if args.i else watcher_config.config['interval'])
+workTime = int(args.t if args.t else watcher_config.config['workTime'])
 
 # clear log file
-f = open(logFile, "w")
-f.write("")
-f.close()
+with open(logFile, "w") as f:
+    f.write("")
 
 startTime = endTime = time.time()
 while endTime - startTime < workTime:
-    currentSnapshot = sh.Snapshot()
+    currentSnapshot = snapshot.Snapshot()
     if outputType == "json":
-        # print(currentSnapshot.tojson())
-        f = open(logFile, "a")
-        f.write(currentSnapshot.tojson())
-        f.close()
+        with open(logFile, "a") as f:
+            f.write(currentSnapshot.tojson())
     else:
-        # print(currentSnapshot)
-        f = open(logFile, "a")
-        f.write(str(currentSnapshot))
-        f.close()
+        with open(logFile, "a") as f:
+            f.write(str(currentSnapshot))
 
-    time.sleep(interval - 1)
+    time.sleep(interval)
     endTime = time.time()
